@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda - Runali</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon-16x16.png" />
+    <link rel="stylesheet" href="static/styles/style.css" />
+    <link rel="stylesheet" href="static/styles/style-tienda.css" />
+  </head>
+  <body>
+    <div class="overlay" id="overlay"></div>
+
+    <header>
+      <div class="nav-container">
+        <img src="static/img/logo.png" alt="Runali_logo" class="logo" />
+        <nav>
+          <ul id="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lab.html">Lab</a></li>
+            <li><a href="#destacados">Productos destacados</a></li>
+            <li><a href="#" class="active">Tienda</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+            <nav class="breadcrumb" aria-label="breadcrumb">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li>Tienda</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="tienda-wrapper">
+      <aside class="sidebar">
+        <h3>Categorías</h3>
+        <ul id="categorias">
+          <li><button class="categoria-btn" data-cat="todo">Todos</button></li>
+          <li><button class="categoria-btn" data-cat="facial">Facial</button></li>
+          <li><button class="categoria-btn" data-cat="corporal">Corporal</button></li>
+          <li><button class="categoria-btn" data-cat="cabello">Cabello</button></li>
+          <li><button class="categoria-btn" data-cat="kits">Kits y Regalos</button></li>
+          <li><button class="categoria-btn" data-cat="Merchandising">Merchandising</button></li>
+        </ul>
+      </aside>
+
+      <section class="productos" id="productos">
+
+      </section>
+    </main>
+
+<a href="#" id="scrollToTop" class="scroll-to-top"></a>
+
+
+    <footer>
+      <section>
+        <h3>Runali - Cosmética Natural</h3>
+        <p>runali.es es una web creada por DanewMalavita y diseñada por Verónica Rivero</p>
+        <p>&copy; 2025 Runali. Todos los derechos reservados.</p>
+      </section>
+    </footer>
+
+    <script src="static/scripts/slider.js"></script>
+    <script src="static/scripts/hamburger.js"></script>
+    <script src="static/scripts/top.js"></script>
+    <script src="static/scripts/tienda.js"></script>
+  </body>
+</html>

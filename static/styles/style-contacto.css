@@ -1,0 +1,48 @@
+/* ========== FORMULARIO DE CONTACTO ========== */
+.contacto-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.contacto-wrapper h3 {
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+}
+
+.form-contacto {
+  max-width: 600px;
+  flex: 1 1 60%;
+  margin: 0;
+  padding: 2rem;
+  background: var(--color-form-suave);
+  border: 1px solid var(--color-borde-claro);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-contacto .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-contacto label {
+  display: block;
+  font-weight: 600;
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+}
+
+.form-contacto input[type="text"],
+.form-contacto input[type="email"],
+.form-contacto input[type="tel"],
+.form-contacto textarea,
+.form-contacto input[type="file"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  background: var(--color-input-bg);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}

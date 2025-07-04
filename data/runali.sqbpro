@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/danyr/Desktop/ASIR Prometeo/web_runali/.data/runali.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="2081"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainProducto"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Activo" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="89"/><column index="2" value="263"/><column index="3" value="400"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Categoria" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="117"/><column index="2" value="137"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Metadata" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="118"/><column index="2" value="115"/><column index="3" value="84"/><column index="4" value="119"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Producto" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="115"/><column index="2" value="216"/><column index="3" value="117"/><column index="4" value="141"/><column index="5" value="61"/><column index="6" value="121"/><column index="7" value="501"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Producto_Activo" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="115"/><column index="2" value="89"/><column index="3" value="102"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Producto_Propiedad" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="115"/><column index="2" value="124"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Propiedad" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="124"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">-- Categorías
+INSERT INTO Categoria (nombre) VALUES
+('Aceite Base'), ('Aceite Esencial'), ('Manteca'), ('Hidrolato'), 
+('Extracto'), ('Tensioactivo'), ('Activo Cosmético'), 
+('Colorante Natural'), ('Esencia'), ('Flor');
+
+-- Propiedades
+INSERT INTO Propiedad (nombre) VALUES 
+('Antiinflamatorio'), ('Antiséptico'), ('Calmante'), 
+('Hidratante'), ('Regenerador');
+
+-- Ingredientes activos
+INSERT INTO Activo (nombre, tipo) VALUES 
+('Ácido linoleico', 'Ácido graso esencial'),
+('Linalool', 'Monoterpeno'),
+('Vitamina E', 'Antioxidante');
+
+-- Producto de ejemplo
+INSERT INTO Producto (nombre, categoria_id, origen, forma, presentacion, descripcion)
+VALUES ('Aceite de Almendras Dulces', 1, 'Prunus amygdalus', 'Líquido', '100 ml', 'Aceite vegetal emoliente para pieles sensibles');
+
+-- Asociar propiedades al producto
+INSERT INTO Producto_Propiedad (producto_id, propiedad_id) VALUES
+(1, 1), -- Antiinflamatorio
+(1, 4); -- Hidratante
+
+-- Asociar activos al producto
+INSERT INTO Producto_Activo (producto_id, activo_id, porcentaje) VALUES
+(1, 1, 20.00), -- Ácido linoleico
+(1, 3, 1.00);  -- Vitamina E
+
+-- Metadata opcional
+INSERT INTO Metadata (producto_id, clave, valor) VALUES
+(1, 'piel_tipo', 'seca y sensible'),
+(1, 'certificado', 'vegano');
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

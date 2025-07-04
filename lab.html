@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Runali Lab - Cosmética personalizada</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="static/img/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="static/styles/style.css" />
+    <link rel="stylesheet" href="static/styles/style-lab.css" />
+  </head>
+  <body>
+    <!-- Overlay para cerrar menú -->
+    <div class="overlay" id="overlay"></div>
+
+    <!--Zona header-->
+    <header>
+      <div class="nav-container">
+        <img src="static/img/logo.png" alt="Runali_logo" class="logo" />
+
+        <!-- Navegación principal -->
+        <nav>
+          <ul id="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lab.html" class="active">Lab</a></li>
+            <li><a href="index.html#destacados">Productos destacados</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <!-- Botón hamburguesa -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>Laboratorio</li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- Hero Section del Lab -->
+      <section class="lab-hero">
+        <div class="hero-content">
+          <h1>Runali Lab</h1>
+          <p class="hero-subtitle">
+            Tu cosmética, diseñada específicamente para ti
+          </p>
+          <p class="hero-description">
+            En nuestro laboratorio creamos fórmulas únicas y personalizadas
+            según tus necesidades específicas. Cada producto es el resultado de
+            un análisis detallado de tu piel y tus preferencias.
+          </p>
+        </div>
+      </section>
+
+      <!-- Cómo funciona -->
+      <section class="lab-process">
+        <h2>¿Cómo funciona nuestro laboratorio?</h2>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Análisis personalizado</h3>
+              <p>
+                Estudiamos tu tipo de piel, necesidades específicas y
+                preferencias aromáticas para crear tu perfil único.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Formulación artesanal</h3>
+              <p>
+                Nuestros especialistas desarrollan una fórmula exclusiva
+                utilizando ingredientes 100% naturales y ecológicos.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Elaboración manual</h3>
+              <p>
+                Cada producto se elabora a mano en pequeños lotes, garantizando
+                la máxima calidad y frescura.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Entrega personalizada</h3>
+              <p>
+                Recibes tu producto único con instrucciones específicas de uso y
+                una etiqueta personalizada.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tipos de productos -->
+      <section class="lab-products">
+        <h2>Productos que podemos crear para ti</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-icon">🧴</div>
+            <h3>Serums faciales</h3>
+            <p>
+              Concentrados de activos específicos para tratar tus necesidades:
+              hidratación, anti-edad, luminosidad o purificación.
+            </p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon">🧴</div>
+            <h3>Cremas hidratantes</h3>
+            <p>
+              Texturas y fórmulas adaptadas a tu tipo de piel: pieles secas,
+              mixtas, sensibles o maduras.
+            </p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon">🧼</div>
+            <h3>Limpiadores faciales</h3>
+            <p>
+              Desde aceites desmaquillantes hasta geles purificantes, adaptados
+              a tu rutina y preferencias.
+            </p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon">🌿</div>
+            <h3>Mascarillas</h3>
+            <p>
+              Tratamientos intensivos personalizados: arcillas, ingredientes
+              nutritivos o calmantes según necesites.
+            </p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon">🧴</div>
+            <h3>Aceites corporales</h3>
+            <p>
+              Mezclas aromáticas únicas para cuidar tu piel corporal con
+              fragancias que reflejen tu personalidad.
+            </p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon">🌿</div>
+            <h3>Productos con CBD</h3>
+            <p>
+              Balsamos de tigre y cremas creados con CBD y mentol con propiedades analgésicas.
+            </p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon">💄</div>
+            <h3>Maquillajes</h3>
+            <p>
+              Labiales, cremas, maquillajes, sombras de ojos adaptados a tu tipo
+              de piel.
+            </p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon">🛀</div>
+            <h3>Productos de baño</h3>
+            <p>
+              Sales, bombas de baño, champú seco y jabones artesanales con
+              aromas y propiedades específicas para tu bienestar.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ingredientes -->
+      <section class="lab-ingredients">
+        <h2>Nuestros ingredientes naturales</h2>
+        <div class="ingredients-wrapper">
+          <div class="ingredients-text">
+            <p>
+              Trabajamos exclusivamente con ingredientes naturales y ecológicos
+              de la más alta calidad. Cada componente se selecciona
+              cuidadosamente por sus propiedades específicas y su compatibilidad
+              con tu piel.
+            </p>
+            <ul class="ingredients-list">
+              <li>
+                <strong>Aceites esenciales puros:</strong> Lavanda, rosa, árbol
+                de té, bergamota
+              </li>
+              <li>
+                <strong>Aceites vegetales:</strong> Jojoba, argán, rosa
+                mosqueta, almendras dulces
+              </li>
+              <li>
+                <strong>Extractos botánicos:</strong> Aloe vera, manzanilla,
+                caléndula, té verde
+              </li>
+              <li>
+                <strong>Activos naturales:</strong> Ácido hialurónico vegetal,
+                vitamina E, arcillas
+              </li>
+              <li>
+                <strong>Mantecas vegetales:</strong> Karité, cacao, mango,
+                murumuru
+              </li>
+            </ul>
+          </div>
+          <div class="ingredients-image">
+            <div class="placeholder-image">
+              <img
+                src="static/img/lab/naturals.png"
+                alt="Imagen de ingredientes naturales"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formulario de consulta -->
+      <section class="lab-consultation">
+        <h2>Solicita tu consulta personalizada</h2>
+        <div class="consultation-wrapper">
+          <div class="consultation-form">
+            <form class="form-contacto-lab" id="consultaForm">
+              <h3>Formulario de consulta</h3>
+              <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" />
+              </div>
+
+              <div class="form-group">
+                <label for="tipoPiel">Tipo de piel *</label>
+                <div class="custom-select">
+                  <select id="tipoPiel" name="tipoPiel" required>
+                    <option value="">Selecciona tu tipo de piel</option>
+                    <option value="seca">Piel seca</option>
+                    <option value="grasa">Piel grasa</option>
+                    <option value="mixta">Piel mixta</option>
+                    <option value="sensible">Piel sensible</option>
+                    <option value="madura">Piel madura</option>
+                    <option value="no-se">No estoy seguro/a</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="necesidades">¿Qué necesitas? *</label>
+                <textarea
+                  id="necesidades"
+                  name="necesidades"
+                  rows="4"
+                  placeholder="Describe tus necesidades específicas, problemas de piel que quieres tratar, productos que te interesan..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="alergias"
+                  >Alergias o sensibilidades conocidas</label
+                >
+                <textarea
+                  id="alergias"
+                  name="alergias"
+                  rows="2"
+                  placeholder="Menciona cualquier ingrediente o sustancia que debamos evitar..."
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="preferencias">Preferencias aromáticas</label>
+                <textarea
+                  id="preferencias"
+                  name="preferencias"
+                  rows="2"
+                  placeholder="¿Prefieres aromas florales, cítricos, herbales, sin fragancia?"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-enviar">
+                Solicitar consulta gratuita
+              </button>
+            </form>
+          </div>
+
+          <div class="consultation-info">
+            <h3>¿Qué incluye la consulta?</h3>
+            <ul>
+              <li>✓ Análisis personalizado de tu piel</li>
+              <li>✓ Recomendaciones específicas</li>
+              <li>✓ Propuesta de fórmulas únicas</li>
+              <li>✓ Presupuesto detallado</li>
+              <li>✓ Seguimiento post-entrega</li>
+            </ul>
+
+            <div class="consultation-note">
+              <p>
+                <strong>Consulta gratuita:</strong> La primera consulta y
+                análisis no tiene coste. Solo pagas cuando decides proceder con
+                la creación de tu producto personalizado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a href="#" id="scrollToTop" class="scroll-to-top"></a>
+
+    <!--Zona Bottom-->
+    <footer>
+      <section>
+        <h3>Runali - Cosmética Natural</h3>
+        <p>
+          runali.es es una web creada por DanewMalavita y diseñada por Verónica
+          Rivero
+        </p>
+        <p>&copy; 2025 Runali. Todos los derechos reservados.</p>
+      </section>
+    </footer>
+
+    <script src="static/scripts/hamburger.js"></script>
+    <script src="static/scripts/top.js"></script>
+    <script src="static/scripts/custom-select.js"></script>
+    <script src="static/scripts/consultation-form.js"></script>
+  </body>
+</html>

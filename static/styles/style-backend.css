@@ -1,0 +1,726 @@
+/* style-backend.css - Panel de Administración Runali */
+
+/* Variables CSS para el panel de administración */
+:root {
+    --admin-primary: #2563eb;
+    --admin-primary-dark: #1d4ed8;
+    --admin-secondary: #64748b;
+    --admin-success: #059669;
+    --admin-success-dark: #047857;
+    --admin-danger: #dc2626;
+    --admin-danger-dark: #b91c1c;
+    --admin-warning: #d97706;
+    --admin-info: #0284c7;
+    
+    --admin-bg-primary: #f8fafc;
+    --admin-bg-secondary: #ffffff;
+    --admin-bg-dark: #1e293b;
+    --admin-text-primary: #0f172a;
+    --admin-text-secondary: #64748b;
+    --admin-text-light: #94a3b8;
+    
+    --admin-border: #e2e8f0;
+    --admin-border-dark: #334155;
+    --admin-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --admin-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    --admin-radius: 8px;
+    --admin-radius-lg: 12px;
+    --admin-transition: all 0.2s ease-in-out;
+}
+
+/* Reset y base para el panel de administración */
+.admin-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+    backdrop-filter: blur(4px);
+}
+
+/* Header del panel de administración */
+.admin-header {
+    background: var(--admin-bg-secondary);
+    border-bottom: 2px solid var(--admin-border);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--admin-shadow);
+}
+
+.admin-nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.admin-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-logo-section .logo {
+    height: 40px;
+    width: auto;
+}
+
+.admin-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--admin-text-primary);
+    margin: 0;
+}
+
+.admin-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+}
+
+.admin-tab {
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: var(--admin-text-secondary);
+    border-radius: var(--admin-radius);
+    transition: var(--admin-transition);
+    font-weight: 500;
+    border: 2px solid transparent;
+}
+
+.admin-tab:hover {
+    background: var(--admin-bg-primary);
+    color: var(--admin-primary);
+}
+
+.admin-tab.active {
+    background: var(--admin-primary);
+    color: white;
+    border-color: var(--admin-primary-dark);
+}
+
+.admin-exit {
+    padding: 0.75rem 1.5rem;
+    background: var(--admin-success);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--admin-radius);
+    transition: var(--admin-transition);
+    font-weight: 500;
+    border: 2px solid var(--admin-success);
+}
+
+.admin-exit:hover {
+    background: var(--admin-success-dark);
+    border-color: var(--admin-success-dark);
+    transform: translateY(-1px);
+}
+
+/* Main content del panel */
+.admin-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 100px);
+}
+
+/* Secciones del panel */
+.admin-section {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--admin-border);
+}
+
+.admin-section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--admin-text-primary);
+    margin: 0;
+}
+
+/* Botones del panel */
+.admin-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--admin-radius);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: var(--admin-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+.admin-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--admin-shadow-lg);
+}
+
+.admin-btn:active {
+    transform: translateY(0);
+}
+
+.admin-btn-primary {
+    background: var(--admin-primary);
+    color: white;
+    border-color: var(--admin-primary);
+}
+
+.admin-btn-primary:hover {
+    background: var(--admin-primary-dark);
+    border-color: var(--admin-primary-dark);
+}
+
+.admin-btn-success {
+    background: var(--admin-success);
+    color: white;
+    border-color: var(--admin-success);
+}
+
+.admin-btn-success:hover {
+    background: var(--admin-success-dark);
+    border-color: var(--admin-success-dark);
+}
+
+.admin-btn-danger {
+    background: var(--admin-danger);
+    color: white;
+    border-color: var(--admin-danger);
+}
+
+.admin-btn-danger:hover {
+    background: var(--admin-danger-dark);
+    border-color: var(--admin-danger-dark);
+}
+
+.admin-btn-secondary {
+    background: var(--admin-secondary);
+    color: white;
+    border-color: var(--admin-secondary);
+}
+
+.admin-btn-secondary:hover {
+    background: #475569;
+    border-color: #475569;
+}
+
+/* Gestión del Slider */
+.admin-slides-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.admin-slide-card {
+    background: var(--admin-bg-secondary);
+    border: 2px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--admin-shadow);
+    transition: var(--admin-transition);
+}
+
+.admin-slide-card:hover {
+    border-color: var(--admin-primary);
+    box-shadow: var(--admin-shadow-lg);
+}
+
+.admin-slide-preview {
+    margin-bottom: 1.5rem;
+}
+
+.admin-slide-mini {
+    height: 120px;
+    border-radius: var(--admin-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-slide-content-mini {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+
+.admin-slide-content-mini h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.admin-slide-content-mini p {
+    font-size: 0.875rem;
+    margin: 0;
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.admin-slide-form {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Gestión de Contenido */
+.admin-content-container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.admin-content-card {
+    background: var(--admin-bg-secondary);
+    border: 2px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--admin-shadow);
+    transition: var(--admin-transition);
+}
+
+.admin-content-card:hover {
+    border-color: var(--admin-primary);
+    box-shadow: var(--admin-shadow-lg);
+}
+
+.admin-content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--admin-text-primary);
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+/* Gestión de Productos */
+.admin-products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.admin-product-card {
+    background: var(--admin-bg-secondary);
+    border: 2px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--admin-shadow);
+    transition: var(--admin-transition);
+}
+
+.admin-product-card:hover {
+    border-color: var(--admin-primary);
+    box-shadow: var(--admin-shadow-lg);
+    transform: translateY(-2px);
+}
+
+.admin-product-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: var(--admin-bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--admin-transition);
+}
+
+.admin-product-image:hover img {
+    transform: scale(1.05);
+}
+
+.admin-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.admin-product-form {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+/* Formularios */
+.admin-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.admin-form-group label {
+    font-weight: 600;
+    color: var(--admin-text-primary);
+    font-size: 0.875rem;
+}
+
+.admin-input,
+.admin-textarea,
+.admin-select {
+    padding: 0.75rem;
+    border: 2px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+    font-size: 0.875rem;
+    transition: var(--admin-transition);
+    background: var(--admin-bg-secondary);
+    color: var(--admin-text-primary);
+}
+
+.admin-input:focus,
+.admin-textarea:focus,
+.admin-select:focus {
+    outline: none;
+    border-color: var(--admin-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.admin-textarea {
+    min-height: 80px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.admin-select {
+    cursor: pointer;
+}
+
+.admin-form-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--admin-border);
+}
+
+/* Modales */
+.admin-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.admin-modal-content {
+    background: var(--admin-bg-secondary);
+    padding: 2rem;
+    border-radius: var(--admin-radius-lg);
+    box-shadow: var(--admin-shadow-lg);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    border: 2px solid var(--admin-border);
+}
+
+.admin-modal-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--admin-text-primary);
+    margin: 0 0 1rem 0;
+}
+
+.admin-modal-content p {
+    color: var(--admin-text-secondary);
+    margin: 0 0 1.5rem 0;
+    line-height: 1.5;
+}
+
+.admin-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+/* Notificaciones */
+.admin-notification {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: var(--admin-radius);
+    box-shadow: var(--admin-shadow-lg);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    gap: 1rem;
+    max-width: 400px;
+    border: 2px solid transparent;
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.admin-notification-success {
+    background: #dcfce7;
+    color: var(--admin-success-dark);
+    border-color: var(--admin-success);
+}
+
+.admin-notification-error {
+    background: #fef2f2;
+    color: var(--admin-danger-dark);
+    border-color: var(--admin-danger);
+}
+
+.admin-notification-info {
+    background: #dbeafe;
+    color: var(--admin-info);
+    border-color: var(--admin-info);
+}
+
+.admin-notification-warning {
+    background: #fef3c7;
+    color: var(--admin-warning);
+    border-color: var(--admin-warning);
+}
+
+.admin-notification-close {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--admin-transition);
+}
+
+.admin-notification-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .admin-products-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .admin-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .admin-main {
+        padding: 1rem;
+    }
+    
+    .admin-section-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .admin-form-actions {
+        flex-direction: column;
+    }
+    
+    .admin-modal-actions {
+        flex-direction: column;
+    }
+    
+    .admin-notification {
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-title {
+        font-size: 1.25rem;
+    }
+    
+    .admin-section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .admin-nav ul {
+        font-size: 0.875rem;
+    }
+    
+    .admin-tab,
+    .admin-exit {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Estados de carga y disabled */
+.admin-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.admin-input:disabled,
+.admin-textarea:disabled,
+.admin-select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--admin-bg-primary);
+}
+
+/* Efectos de hover mejorados */
+.admin-slide-card:hover .admin-slide-mini {
+    transform: scale(1.02);
+}
+
+.admin-content-card:hover,
+.admin-product-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Scrollbar personalizado para el panel */
+.admin-main::-webkit-scrollbar {
+    width: 8px;
+}
+
+.admin-main::-webkit-scrollbar-track {
+    background: var(--admin-bg-primary);
+    border-radius: 4px;
+}
+
+.admin-main::-webkit-scrollbar-thumb {
+    background: var(--admin-border-dark);
+    border-radius: 4px;
+}
+
+.admin-main::-webkit-scrollbar-thumb:hover {
+    background: var(--admin-text-secondary);
+}
+
+/* Animaciones adicionales */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.admin-btn-primary:hover {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Focus visible para accesibilidad */
+.admin-btn:focus-visible,
+.admin-input:focus-visible,
+.admin-textarea:focus-visible,
+.admin-select:focus-visible {
+    outline: 2px solid var(--admin-primary);
+    outline-offset: 2px;
+}
+
+/* Modo oscuro (opcional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --admin-bg-primary: #0f172a;
+        --admin-bg-secondary: #1e293b;
+        --admin-text-primary: #f8fafc;
+        --admin-text-secondary: #cbd5e1;
+        --admin-border: #334155;
+    }
+}
+
+/* Utilidades adicionales */
+.admin-hidden {
+    display: none !important;
+}
+
+.admin-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.admin-text-center {
+    text-align: center;
+}
+
+.admin-text-right {
+    text-align: right;
+}
+
+.admin-mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.admin-mt-1 {
+    margin-top: 0.5rem !important;
+}
+
+.admin-p-0 {
+    padding: 0 !important;
+}
