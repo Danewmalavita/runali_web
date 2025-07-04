@@ -49,8 +49,8 @@ function renderProducto(producto) {
   div.className = "producto";
   const basePath = getBasePath();
   const imagen = producto.imagen && producto.imagen.trim() !== "" ? producto.imagen : "noimage.png";
-  const rutaImagen = `${basePath}/static/img/productos/${imagen}`;
-  const rutaFallback = `${basePath}/static/img/productos/gnomimage.png`;
+  const rutaImagen = `${basePath}/runali_web/static/img/productos/${imagen}`;
+  const rutaFallback = `${basePath}/runali_web/static/img/productos/gnomimage.png`;
   
   div.innerHTML = `
     <img src="${rutaImagen}" alt="${producto.nombre}" onerror="this.onerror=null;this.src='${rutaFallback}'" />
