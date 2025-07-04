@@ -19,7 +19,7 @@ const productosMock = [
 // Función para obtener la ruta base del sitio
 function getBasePath() {
   // Si estamos en GitHub Pages, usamos la ruta del repositorio
-  if (window.location.hostname === 'danewmalavita.github.io') {
+  if (window.location.hostname === 'Danewmalavita.github.io') {
     return '/runali_web';
   }
   // Para desarrollo local, usamos ruta relativa
@@ -48,7 +48,7 @@ function renderProducto(producto) {
   const div = document.createElement("div");
   div.className = "producto";
   const basePath = getBasePath();
-  const imagen = producto.imagen && producto.imagen.trim() !== "" ? producto.imagen : "gnomimage.png";
+  const imagen = producto.imagen && producto.imagen.trim() !== "" ? producto.imagen : "noimage.png";
   const rutaImagen = `${basePath}/static/img/productos/${imagen}`;
   const rutaFallback = `${basePath}/static/img/productos/gnomimage.png`;
   
