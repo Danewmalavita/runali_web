@@ -16,6 +16,16 @@ const productosMock = [
   { nombre: "Pegatina adhesiva de gnomos", descripcion: "Si te ha gustado la imagen, te la puedes llevar como una pegatina.", precio: 2.0, imagen: "gnomimage.jpg", categoria: "Merchandising" }
 ];
 
+// Función para obtener la ruta base del sitio
+function getBasePath() {
+  // Si estamos en GitHub Pages, usamos la ruta del repositorio
+  if (window.location.hostname === 'danewmalavita.github.io') {
+    return '/runali_web';
+  }
+  // Para desarrollo local, usamos ruta relativa
+  return '.';
+}
+
 // Simular carga de productos filtrados y paginados
 async function cargarProductos() {
   if (cargando) return;
@@ -37,9 +47,13 @@ async function cargarProductos() {
 function renderProducto(producto) {
   const div = document.createElement("div");
   div.className = "producto";
+  const basePath = getBasePath();
   const imagen = producto.imagen && producto.imagen.trim() !== "" ? producto.imagen : "gnomimage.png";
+  const rutaImagen = `${basePath}/static/img/productos/${imagen}`;
+  const rutaFallback = `${basePath}/static/img/productos/gnomimage.png`;
+  
   div.innerHTML = `
-    <img src="../static/img/productos/${imagen}" alt="${producto.nombre}" onerror="this.onerror=null;this.src='../static/img/productos/gnomimage.png'" />
+    <img src="${rutaImagen}" alt="${producto.nombre}" onerror="this.onerror=null;this.src='${rutaFallback}'" />
     <div class="info">
       <h4>${producto.nombre}</h4>
       <p>${producto.descripcion}</p>
