@@ -39,7 +39,7 @@ function renderProducto(producto) {
   div.className = "producto";
   const imagen = producto.imagen && producto.imagen.trim() !== "" ? producto.imagen : "gnomimage.png";
   div.innerHTML = `
-    <img src="/static/img/productos/${imagen}" alt="${producto.nombre}" onerror="this.onerror=null;this.src='/static/img/productos/gnomimage.png'" />
+    <img src="../static/img/productos/${imagen}" alt="${producto.nombre}" onerror="this.onerror=null;this.src='../static/img/productos/gnomimage.png'" />
     <div class="info">
       <h4>${producto.nombre}</h4>
       <p>${producto.descripcion}</p>
